@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF20089E24B4619E00407615 /* GoogleService-Info-dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF20089B24B4619D00407615 /* GoogleService-Info-dev.plist */; };
+		BF20089F24B4619E00407615 /* GoogleService-Info-adhoc.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF20089C24B4619D00407615 /* GoogleService-Info-adhoc.plist */; };
+		BF2008A024B4619E00407615 /* GoogleService-Info-distribute.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF20089D24B4619E00407615 /* GoogleService-Info-distribute.plist */; };
 		BFE4C20124B432DC0041825B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4C20024B432DC0041825B /* AppDelegate.swift */; };
 		BFE4C20324B432DC0041825B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4C20224B432DC0041825B /* SceneDelegate.swift */; };
 		BFE4C20524B432DC0041825B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4C20424B432DC0041825B /* ViewController.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF20089B24B4619D00407615 /* GoogleService-Info-dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-dev.plist"; sourceTree = "<group>"; };
+		BF20089C24B4619D00407615 /* GoogleService-Info-adhoc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-adhoc.plist"; sourceTree = "<group>"; };
+		BF20089D24B4619E00407615 /* GoogleService-Info-distribute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-distribute.plist"; sourceTree = "<group>"; };
 		BFE4C1FD24B432DC0041825B /* demo-bitrise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-bitrise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE4C20024B432DC0041825B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFE4C20224B432DC0041825B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF20089A24B4618500407615 /* GoogleService-Info */ = {
+			isa = PBXGroup;
+			children = (
+				BF20089C24B4619D00407615 /* GoogleService-Info-adhoc.plist */,
+				BF20089B24B4619D00407615 /* GoogleService-Info-dev.plist */,
+				BF20089D24B4619E00407615 /* GoogleService-Info-distribute.plist */,
+			);
+			path = "GoogleService-Info";
+			sourceTree = "<group>";
+		};
 		BFE4C1F424B432DC0041825B = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +116,7 @@
 		BFE4C1FF24B432DC0041825B /* demo-bitrise */ = {
 			isa = PBXGroup;
 			children = (
+				BF20089A24B4618500407615 /* GoogleService-Info */,
 				BFE4C23024B436430041825B /* demo-bitrise.entitlements */,
 				BFE4C20024B432DC0041825B /* AppDelegate.swift */,
 				BFE4C20224B432DC0041825B /* SceneDelegate.swift */,
@@ -234,7 +251,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2008A024B4619E00407615 /* GoogleService-Info-distribute.plist in Resources */,
+				BF20089F24B4619E00407615 /* GoogleService-Info-adhoc.plist in Resources */,
 				BFE4C20D24B432DE0041825B /* LaunchScreen.storyboard in Resources */,
+				BF20089E24B4619E00407615 /* GoogleService-Info-dev.plist in Resources */,
 				BFE4C20A24B432DE0041825B /* Assets.xcassets in Resources */,
 				BFE4C20824B432DC0041825B /* Main.storyboard in Resources */,
 			);
