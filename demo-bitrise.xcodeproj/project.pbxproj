@@ -157,6 +157,8 @@
 				BFE4C1F924B432DC0041825B /* Sources */,
 				BFE4C1FA24B432DC0041825B /* Frameworks */,
 				BFE4C1FB24B432DC0041825B /* Resources */,
+				BF2008A124B464EC00407615 /* Copy GoogleService-Info */,
+				BF2008A224B465A300407615 /* Upload dSYM */,
 			);
 			buildRules = (
 			);
@@ -275,6 +277,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF2008A124B464EC00407615 /* Copy GoogleService-Info */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy GoogleService-Info";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" == \"Release\" ]; then\n  cp \"${PROJECT_DIR}/${PROJECT_NAME}/GoogleService-Info/GoogleService-Info-distribute.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelif [ \"${CONFIGURATION}\" == \"AdHoc\" ]; then\n  cp \"${PROJECT_DIR}/${PROJECT_NAME}/GoogleService-Info/GoogleService-Info-adhoc.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n  cp \"${PROJECT_DIR}/${PROJECT_NAME}/GoogleService-Info/GoogleService-Info-dev.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
+		};
+		BF2008A224B465A300407615 /* Upload dSYM */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}",
+			);
+			name = "Upload dSYM";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/scripts/run\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BFE4C1F924B432DC0041825B /* Sources */ = {
@@ -645,6 +688,7 @@
 				CODE_SIGN_ENTITLEMENTS = "demo-bitrise/demo-bitrise.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Distribution: Vu Cong (XY8UWSG2LX)";
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = XY8UWSG2LX;
 				INFOPLIST_FILE = "demo-bitrise/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
