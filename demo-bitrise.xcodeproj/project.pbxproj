@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		BFE4C20D24B432DE0041825B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE4C20B24B432DE0041825B /* LaunchScreen.storyboard */; };
 		BFE4C21824B432DE0041825B /* demo_bitriseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4C21724B432DE0041825B /* demo_bitriseTests.swift */; };
 		BFE4C22324B432DE0041825B /* demo_bitriseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4C22224B432DE0041825B /* demo_bitriseUITests.swift */; };
+		BFF8F5C724BC505E0015182C /* run in Resources */ = {isa = PBXBuildFile; fileRef = BFF8F5C524BC505E0015182C /* run */; };
+		BFF8F5C824BC505E0015182C /* upload-symbols in Resources */ = {isa = PBXBuildFile; fileRef = BFF8F5C624BC505E0015182C /* upload-symbols */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		BFE4C22224B432DE0041825B /* demo_bitriseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo_bitriseUITests.swift; sourceTree = "<group>"; };
 		BFE4C22424B432DE0041825B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFE4C23024B436430041825B /* demo-bitrise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "demo-bitrise.entitlements"; sourceTree = "<group>"; };
+		BFF8F5C524BC505E0015182C /* run */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run; sourceTree = "<group>"; };
+		BFF8F5C624BC505E0015182C /* upload-symbols */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "upload-symbols"; sourceTree = "<group>"; };
 		D174E0B75C8E02503738BB60 /* Pods-demo-bitrise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-bitrise.debug.xcconfig"; path = "Target Support Files/Pods-demo-bitrise/Pods-demo-bitrise.debug.xcconfig"; sourceTree = "<group>"; };
 		D1C3DE9F448DEC826071B9B1 /* Pods-demo-bitrise-demo-bitriseUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-bitrise-demo-bitriseUITests.adhoc.xcconfig"; path = "Target Support Files/Pods-demo-bitrise-demo-bitriseUITests/Pods-demo-bitrise-demo-bitriseUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		D2B654133F71E8432DE12909 /* Pods-demo-bitrise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-bitrise.release.xcconfig"; path = "Target Support Files/Pods-demo-bitrise/Pods-demo-bitrise.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +128,6 @@
 				1ED27506AC29189D48E20729 /* Pods-demo-bitriseTests.adhoc.xcconfig */,
 				9A75826FB562524090886832 /* Pods-demo-bitriseTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE4C1FF24B432DC0041825B /* demo-bitrise */,
+				BFF8F5C424BC505E0015182C /* scripts */,
 				BFE4C21624B432DE0041825B /* demo-bitriseTests */,
 				BFE4C22124B432DE0041825B /* demo-bitriseUITests */,
 				BFE4C1FE24B432DC0041825B /* Products */,
@@ -192,6 +196,15 @@
 				BFE4C22424B432DE0041825B /* Info.plist */,
 			);
 			path = "demo-bitriseUITests";
+			sourceTree = "<group>";
+		};
+		BFF8F5C424BC505E0015182C /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				BFF8F5C524BC505E0015182C /* run */,
+				BFF8F5C624BC505E0015182C /* upload-symbols */,
+			);
+			path = scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +318,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF8F5C724BC505E0015182C /* run in Resources */,
+				BFF8F5C824BC505E0015182C /* upload-symbols in Resources */,
 				BF2008A024B4619E00407615 /* GoogleService-Info-distribute.plist in Resources */,
 				BF20089F24B4619E00407615 /* GoogleService-Info-adhoc.plist in Resources */,
 				BFE4C20D24B432DE0041825B /* LaunchScreen.storyboard in Resources */,
