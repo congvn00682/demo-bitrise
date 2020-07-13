@@ -1,0 +1,80 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  lane :adhoc do
+    increment_build_number(xcodeproj: "sg-app-ios.xcodeproj")
+
+    gym(
+      scheme: "sg-app-ios",
+      export_method: "ad-hoc",
+      configuration: "AdHoc",
+      export_options: {
+        provisioningProfiles: {
+          "com.foundation.demo-bitrise.adhoc" => "Demo Bitrise App Ad Hoc Distribution Profile"
+        },
+        compileBitcode: false,
+        stripSwiftSymbols: true
+      }
+    )
+
+    firebase_cli_token = nil
+    if is_ci?
+        firebase_cli_token = ENV["FIREBASE_TOKEN"]
+    end
+    testers = "congvn00682@gmail.com"
+
+    firebase_app_distribution(
+      app: "1:415322533505:ios:82afe91842d806c0b0a780",
+      firebase_cli_token: firebase_cli_token,
+      testers: testers,
+      release_notes: "Hi! Please test the new features & bug fixes."
+    )
+
+    build_number = get_build_number()
+
+    commit_version_bump(
+      message: "Build version bump: " + build_number,
+    )
+  end
+
+  lane :release do
+    gym(
+      scheme: "sg-app-ios",
+      export_method: "app-store",
+      configuration: "Release",
+      export_options: {
+        provisioningProfiles: {
+          "com.foundation.demo-bitrise.distribute" => "Demo Bitrise App App Store Distribution Profile"
+        },
+        compileBitcode: false,
+        stripSwiftSymbols: true
+      }
+    )
+
+    deliver(
+      # submit_for_review: true,
+      # automatic_release: true,
+      # force: true, # Skip HTMl report verification
+      skip_metadata: true,
+      skip_screenshots: true,
+      skip_binary_upload: false
+    )
+  end
+
+end
