@@ -18,15 +18,15 @@ default_platform(:ios)
 platform :ios do
 
   lane :adhoc do
-    increment_build_number(xcodeproj: "sg-app-ios.xcodeproj")
+    increment_build_number(xcodeproj: "demo-bitrise.xcodeproj")
 
     gym(
-      scheme: "sg-app-ios",
+      scheme: "demo-bitrise",
       export_method: "ad-hoc",
       configuration: "AdHoc",
       export_options: {
         provisioningProfiles: {
-          "com.foundation.demo-bitrise.adhoc" => "Demo Bitrise App Ad Hoc Distribution Profile"
+          "com.foundation.demo-bitrise.adhoc" => "Bitrise adhoc"
         },
         compileBitcode: false,
         stripSwiftSymbols: true
@@ -37,7 +37,7 @@ platform :ios do
     if is_ci?
         firebase_cli_token = ENV["FIREBASE_TOKEN"]
     end
-    testers = "congvn00682@gmail.com"
+    testers = "gaoianhyeu8595@gmail.com"
 
     firebase_app_distribution(
       app: "1:415322533505:ios:82afe91842d806c0b0a780",
@@ -55,12 +55,12 @@ platform :ios do
 
   lane :release do
     gym(
-      scheme: "sg-app-ios",
+      scheme: "demo-bitrise",
       export_method: "app-store",
       configuration: "Release",
       export_options: {
         provisioningProfiles: {
-          "com.foundation.demo-bitrise.distribute" => "Demo Bitrise App App Store Distribution Profile"
+          "com.foundation.demo-bitrise.distribute" => "Bitrise distribute"
         },
         compileBitcode: false,
         stripSwiftSymbols: true
